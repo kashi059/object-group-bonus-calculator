@@ -48,79 +48,79 @@ console.log('array of employee data: ',  employees );
 // This function will calculate 1 employee's bonus!
 
 
-function calculateIndividualEmployeeBonus( employee ) {  
-  // your logic here
-   let bonus = 1
-    for (let employee of employees){
-      
-    console.log('this is a list of objects and inside an employees array', employees);
+// function calculateIndividualEmployeeBonus( employee ) {  
+//   // your logic here
+//    let bonus = 1
+//     for (let employee of employees){
+     
+//     console.log('this is a list of objects and inside an employees array', employees);
 
   
 
-// - Those who have a rating of a 2 or below should not receive a bonus.
-  if (employees.reviewRating <= 2){
-    bonus = 0;
-    console.log('No bonus for you this year.');
-// - Those who have a rating of a 3 should receive a base bonus of 4% of their base annual income.
-  } else if (employees.reviewRating = 3){
-    bonus = (employees.annualSalary * 1.04 );
-    console.log('You received a bonus this year of 4%');
+// // - Those who have a rating of a 2 or below should not receive a bonus.
+//   if (employees.reviewRating <= 2){
+//     bonus = 0;
+//     console.log('No bonus for you this year.');
+// // - Those who have a rating of a 3 should receive a base bonus of 4% of their base annual income.
+//   } else if (employees.reviewRating === 3){
+//     bonus = (employees.annualSalary * 1.04 );
+//     console.log('You received a bonus this year of 4%');
 
 
-// - Those who have a rating of a 4 should receive a base bonus of 6% of their base annual income.
-  } else if (employees.reviewRating = 4){
-    bonus = (employees.annualSalary * 1.06 );
-    console.log('You received a bonus this year of 6%');
+// // - Those who have a rating of a 4 should receive a base bonus of 6% of their base annual income.
+//   } else if (employees.reviewRating === 4){
+//     bonus = (employees.annualSalary * 1.06 );
+//     console.log('You received a bonus this year of 6%');
 
 
-// - Those who have a rating of a 5 should receive a base bonus of 10% of their base annual income.
+// // - Those who have a rating of a 5 should receive a base bonus of 10% of their base annual income.
 
-  } else if (employees.reviewRating = 5){
-    bonus = (employees.annualSalary * 1.10 );
-    console.log('You received a bonus this year of 6%');
-}
+//   } else if (employees.reviewRating === 5){
+//     bonus = (employees.annualSalary * 1.10 );
+//     console.log('You received a bonus this year of 6%');
+// }
 
 
 
-if (employees.employeeNumber.length >= 4) {
-  //were gonna bump you up 5%
-  bonus = (bonus * 1.05)
-  console.log('',bonus);
+// if (employees.employeeNumber.length >= 4){
+//   //were gonna bump you up 5%
+//   bonus = (bonus * 1.05)
+//   console.log('',bonus);
   
-}
-// - However, if their annual income is greater than $65,000, they should have their bonus adjusted down 1%.
-// - No bonus can be above 13% or below 0% total.
+// }
+// // - However, if their annual income is greater than $65,000, they should have their bonus adjusted down 1%.
+// // - No bonus can be above 13% or below 0% total.
 
-else if (employees.annualSalary >= 65000){
-  bonus = (bonus * .99);
-   console.log('dropped you down 1% ', bonus);
-}
+// else if (employees.annualSalary >= 65000){
+//   bonus = (bonus * .99);
+//    console.log('dropped you down 1% ', bonus);
+// }
 
-else if (bonus > 1.13 || bonus < 1) {
-  bonus = (bonus * 1)
-  console.log ('No bonus for you! ', bonus); 
-}
+// else if (bonus > 1.13 || bonus < 1) {
+//   bonus = (bonus * 1)
+//   console.log ('No bonus for you! ', bonus); 
+// }
 
-// screw robert!  HA-HA-HA!
+// // screw robert!  HA-HA-HA!
 
 
     
-  }
-  return bonus
-  console.log(`${employees.name}` + ' earned a ' +  bonus + 'this year.')
+//   }
+//   return bonus
+//   console.log(`${employees.name}` + ' earned a ' +  bonus + 'this year.')
 
-  // const employees = [
-  //   {
-  //     name: 'Atticus',
-  //     employeeNumber: '2405',
-  //     annualSalary: '47000',
-  //     reviewRating: 3
-  //   },
-  // return new object with bonus results
+//   // const employees = [
+//   //   {
+//   //     name: 'Atticus',
+//   //     employeeNumber: '2405',
+//   //     annualSalary: '47000',
+//   //     reviewRating: 3
+//   //   },
+//   // return new object with bonus results
   
-}
+// }
 
-let bonusEarned = calculateIndividualEmployeeBonus('Atticus');
+// let bonusEarned = calculateIndividualEmployeeBonus('Atticus');
 
 
 // - Those who have a rating of a 2 or below should not receive a bonus.
@@ -152,7 +152,7 @@ let bonusEarned = calculateIndividualEmployeeBonus('Atticus');
 // - If their employee number is 4 digits long, this means they have been with the company for longer than 15 years,
 // and should receive an additional 5%.
 
-// if (empleeNumber.length >= 4) {
+// if (employeeNumber.length >= 4) {
 //   //were gonna bump you up 5%
 // }
 // // - However, if their annual income is greater than $65,000, they should have their bonus adjusted down 1%.
@@ -167,3 +167,87 @@ let bonusEarned = calculateIndividualEmployeeBonus('Atticus');
 // }
 
 // // screw robert!  HAHAHA
+  
+// ## The Bonus Calculation Function
+
+// Write a declared function that takes in one **Employee** object (as an argument to the function), 
+// and `return` a new **object** with the following properties. _Note these properties are different than the ones you start with!_
+// * The `name` property should contain the employee's name.
+// * The `bonusPercentage` property should contain the bonus percentage the employee is to receive. See section below for calculation instructions.
+// * The `totalCompensation` property should be the adjusted annual compensation (base annual + bonus)
+// * The `totalBonus` should be the employee's total bonus rounded to the nearest dollar.
+
+function calculateIndividualEmployeeBonus( employee ) {  
+  // your logic here
+   let bonus = 0;
+    for (let i = 0; i < employees.length; i++) {
+      const employee = employees[i];
+      // const bonusEarned = calculateIndividualEmployeeBonus(employee);
+      // console.log(`${employee.name} earned a bonus of $${bonusEarned} this year.`);
+      console.log('this is a list of objects and inside an employees array', employees);
+  
+    
+  
+  // - Those who have a rating of a 2 or below should not receive a bonus.
+    if (employee.reviewRating <= 2){
+      console.log('No bonus for you this year.');
+  // - Those who have a rating of a 3 should receive a base bonus of 4% of their base annual income.
+    } else if (employee.reviewRating === 3){
+      bonus += employee.annualSalary * 0.04;
+      console.log('You received a bonus this year of 4%');
+  
+  
+  // - Those who have a rating of a 4 should receive a base bonus of 6% of their base annual income.
+    } else if (employee.reviewRating === 4){
+      bonus += employee.annualSalary * 0.06 ;
+      console.log('You received a bonus this year of 6%');
+  
+  
+  // - Those who have a rating of a 5 should receive a base bonus of 10% of their base annual income.
+  
+    } else if (employee.reviewRating === 5){
+      bonus += employee.annualSalary * 0.10 ;
+      console.log('You received a bonus this year of 10%');
+  }
+  
+  
+  //Teacher help me plz************* How do we make this work?
+  if (employee.employeeNumber.length >= 4){
+    //were gonna bump you up 5%
+    bonus += employee.annualSalary * 0.05;
+    console.log('You received a bonus this year of 5%');
+  }
+  // - However, if their annual income is greater than $65,000, they should have their bonus adjusted down 1%.
+  // - No bonus can be above 13% or below 0% total.
+  
+  if (employee.annualSalary >= 65000){
+    bonus += employee.annualSalary * .99;
+     console.log('Unfortunately we have to bring your annual salary down by 1%');
+  }
+  
+  if (bonus > 0.13 || bonus < 0) {
+    bonus = (employee.annualSalary * 1)
+    console.log ('No bonus change for you! '); 
+  }
+  
+  // screw robert!  HA-HA-HA!
+  
+  
+      
+    }
+    return bonus
+    console.log(`${employees.name}` + ' earned a ' +  bonus + 'this year.')
+  
+    // const employees = [
+    //   {
+    //     name: 'Atticus',
+    //     employeeNumber: '2405',
+    //     annualSalary: '47000',
+    //     reviewRating: 3
+    //   },
+    // return new object with bonus results
+    
+  }
+  
+  let bonusEarned = calculateIndividualEmployeeBonus('Atticus');
+  console.log(bonusEarned);
